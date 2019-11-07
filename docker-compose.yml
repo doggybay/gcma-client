@@ -5,6 +5,7 @@ services:
     container_name: gcma-client
     volumes:
       - ./:/user/src/app
+      - //c/Users/doggy/Documents/school/gcma-client:/usr/src/app
     ports:
       - "3000:3000"
   db:
@@ -19,8 +20,7 @@ services:
   web:
     image: gcma-api_web:latest
     volumes:
-      # - /mnt/c/Users/doggy/documents/school/gcma-api:/usr/src/app
-      - //c/Users/doggy/Documents/school/gcma-client:/usr/src/app
+      - /mnt/c/Users/doggy/documents/school/gcma-api:/usr/src/app
     env_file: ./.env
     depends_on:
       - db
