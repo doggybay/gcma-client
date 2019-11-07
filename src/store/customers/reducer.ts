@@ -4,10 +4,19 @@ import * as constants from './constants'
 
 let initialState = {
   all: [],
-  oneCustomer: {},
+  one: {
+    id: 0,
+    company: '',
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    created_at: '',
+    updated_at: ''
+  },
   err: {}
 }
-export default (state = initialState, action: types.CustomerActionType) => {
+export default (state: types.CustomerState = initialState, action: types.CustomerActionType) => {
   switch (action.type) {
     case constants.FETCH_ALL_CUSTOMERS_PENDING:
       return state

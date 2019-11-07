@@ -13,7 +13,9 @@ export interface Customer {
 }
 
 export interface CustomerState {
-  customers: Customer[]
+  all: Customer[],
+  one: Customer,
+  err: {}
 }
 
 //All Customer Actions
