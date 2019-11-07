@@ -15,7 +15,7 @@ export default (state = initialState, action: types.CustomerActionType) => {
     case constants.FETCH_ALL_CUSTOMERS_FAILED:
       return { ...state, err: action.payload }
     
-    case constants.FETCH_ALL_CUSTOMER_SUCCESS:
+    case constants.FETCH_ALL_CUSTOMERS_SUCCESS:
       return { ...state, all: action.payload }
     
     default: 
