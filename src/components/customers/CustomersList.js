@@ -2,31 +2,27 @@ import React from 'react'
 import { Image, Item, Container, List } from "semantic-ui-react";
 import { useSelector } from 'react-redux';
 
+import { TeeDate } from '../teeTimes/TeeDate'
+import { TeeTime } from '../teeTimes/TeeTime'
+import {TeeTimesList} from '../teeTimes/TeeTimesList'
+
 const CustomersList = () => {
   const customers = useSelector(state => state.customers.all);
   
 
   const listOfCustomers = customers.map(customer => {
+
     const teeTimes = customer.tee_times.map(teeTime => {
 
-      const time = new Date(teeTime.time)
-
-      const formattedDate = new Intl.DateTimeFormat("en-US", {
-        month: 'short',
-        day: '2-digit',
-        year: 'numeric',
-      }).format(time)
-
-      const formattedTime = new Intl.DateTimeFormat("en-us", {
-        hour: "2-digit",
-        minute: "2-digit"
-      }).format(time);
+      const timeToFormat = new Date(teeTime.time)
       
       return (
-      <List.Item key="" as="li" value="-">
-        {formattedDate} at {formattedTime}
-      </List.Item>
-    )})
+        <List.Item key="" as="li" value="-">
+          <TeeDate time={timeToFormat} />
+          <> at</> <TeeTime time={timeToFormat} />
+        </List.Item>
+      );
+    })
     
     return (
       <List.Item as="li" value="*">
