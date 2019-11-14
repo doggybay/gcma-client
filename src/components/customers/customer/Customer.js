@@ -22,5 +22,3 @@ const Customer = ({ customer }) => {
 }
 
 export default Customer
-
-//<TeeTimes teeTime={teeTimes} />
