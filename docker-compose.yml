@@ -1,28 +1,29 @@
 version: "3.7"
 services:
   app:
+    # image: gcma-client
     build: ./
-    container_name: gcma-client
+    # container_name: gcma-client
     volumes:
       - ./:/user/src/app
       - //c/Users/doggy/Documents/school/gcma-client:/usr/src/app
     ports:
       - "3000:3000"
-  db:
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: docker
-      POSTGRESS_USER: postgres
-    volumes:
-      - $HOME/docker/volumes/postgres:/var/lib/postgresql/data
-    ports:
-      - '5433:5432'
-  web:
-    image: gcma-api_web:latest
-    volumes:
-      - /mnt/c/Users/doggy/documents/school/gcma-api:/usr/src/app
-    env_file: ./.env
-    depends_on:
-      - db
-    ports:
-      - '8000:8080'
+  # db:
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_PASSWORD: docker
+  #     POSTGRESS_USER: postgres
+  #   volumes:
+  #     - $HOME/docker/volumes/postgres:/var/lib/postgresql/data
+  #   ports:
+  #     - '5433:5432'
+  # web:
+  #   image: gcma-api_web:latest
+  #   volumes:
+  #     - /mnt/c/Users/doggy/documents/school/gcma-api:/usr/src/app
+  #   env_file: ./.env
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - '8000:8080'
