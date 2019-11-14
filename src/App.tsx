@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { Container } from 'semantic-ui-react'
 import './App.css'
 
 import * as actions from './store/customers/actionCreators'
@@ -16,7 +17,10 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <CustomersList />
+    
+        <CustomersList />
+      
+      
     </div>
   )
 }
