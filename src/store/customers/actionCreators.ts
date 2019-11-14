@@ -3,14 +3,14 @@ import { Dispatch } from 'redux'
 
 import * as actions from './actions'
 
-import { home, local } from '../location'
+import { home, local, outside } from '../location'
 
 export const fetchAllCustomers = () => {
   return async (dispatch: Dispatch) => {
     try {
       dispatch(actions.fetchAllCustomersPending())
 
-      const res = await axios.get(`${home}customers`)
+      const res = await axios.get(`${outside}customers`)
       
       dispatch(actions.fetchAllCustomersSuccess(res.data))
       
