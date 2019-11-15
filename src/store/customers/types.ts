@@ -1,5 +1,4 @@
-import { FetchAllCustomersSuccessAction } from './types';
-import { FETCH_ALL_CUSTOMERS_PENDING, FETCH_ALL_CUSTOMERS_SUCCESS, FETCH_ALL_CUSTOMERS_FAILED } from './constants';
+import * as constants from './constants';
 
 export interface Customer {
   id: number
@@ -22,14 +21,14 @@ export interface CustomerState {
 
 //Fetch All Customers
 export interface FetchAllCustomersPendingAction {
-  type: typeof FETCH_ALL_CUSTOMERS_PENDING
+  type: typeof constants.FETCH_ALL_CUSTOMERS_PENDING
 }
 export interface FetchAllCustomersSuccessAction {
-  type: typeof FETCH_ALL_CUSTOMERS_SUCCESS
+  type: typeof constants.FETCH_ALL_CUSTOMERS_SUCCESS
   payload: Customer[]
 }
 export interface FetchAllCustomersFailedAction {
-  type: typeof FETCH_ALL_CUSTOMERS_FAILED
+  type: typeof constants.FETCH_ALL_CUSTOMERS_FAILED
   payload: any
 }
 
