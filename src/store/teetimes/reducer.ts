@@ -6,26 +6,29 @@ let initialState = {
   all: [],
   one: {
     id: 0,
-    company: '',
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    created_at: '',
-    updated_at: ''
+    time: ''
   },
   err: {}
 }
-export default (state: types.CustomerState = initialState, action: types.CustomerActionType) => {
+export default (state: types.TeeTimeState = initialState, action: types.TeeTimeActionType) => {
   switch (action.type) {
-    case constants.FETCH_ALL_CUSTOMERS_PENDING:
+    case constants.FETCH_ALL_TEETIMES_PENDING:
+    case constants.FETCH_ONE_TEETIME_PENDING:
+    case constants.REMOVE_TEETIME_PENDING:
+    case constants.ADD_NEW_TEETIME_PENDING:
       return state
     
-    case constants.FETCH_ALL_CUSTOMERS_FAILED:
+    case constants.FETCH_ALL_TEETIMES_FAILED:
+    case constants.FETCH_ONE_TEETIME_FAILED:
+    case constants.REMOVE_TEETIME_FAILED:
+    case constants.ADD_NEW_TEETIME_FAILED:
       return { ...state, err: action.payload }
     
-    case constants.FETCH_ALL_CUSTOMERS_SUCCESS:
+    case constants.FETCH_ALL_TEETIMES_SUCCESS:
       return { ...state, all: action.payload }
+    
+    case constants.FETCH_ONE_TEETIME_SUCCESS:
+      return { ...state, one: action.payload }
     
     default: 
       return state

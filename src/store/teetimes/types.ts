@@ -15,75 +15,75 @@ export interface TeeTimeState {
 //All Tee Time Actions
 
 //Fetch all tee times
-export interface FetchAllTeeTimesPendingAction {
+interface FetchAllTeeTimesPendingAction {
   type: typeof constants.FETCH_ALL_TEETIMES_PENDING
 }
-export interface FetchAllTeeTimesSuccessAction {
+interface FetchAllTeeTimesSuccessAction {
   type: typeof constants.FETCH_ALL_TEETIMES_SUCCESS
   payload: TeeTime[]
 }
-export interface FetchAllTeeTimesFailedAction {
+interface FetchAllTeeTimesFailedAction {
   type: typeof constants.FETCH_ALL_TEETIMES_FAILED
   payload: any
 }
 
 //Fetch one tee time
-export interface FetchOneTeeTimePendingAction {
+interface FetchOneTeeTimePendingAction {
   type: typeof constants.FETCH_ONE_TEETIME_PENDING
 }
 
-export interface FetchOneTeeTimeSuccessAction {
+interface FetchOneTeeTimeSuccessAction {
   type: typeof constants.FETCH_ONE_TEETIME_SUCCESS
   payload: TeeTime
 }
 
-export interface FetchOneTeeTimeFailedAction {
+interface FetchOneTeeTimeFailedAction {
   type: typeof constants.FETCH_ONE_TEETIME_FAILED
   payload: any
 }
 
 //Update tee times
-export interface UpdateOneTeeTimePendingAction {
+interface UpdateOneTeeTimePendingAction {
   type: typeof constants.UPDATE_ONE_TEETIME_PENDING
 }
 
-export interface UpdateOneTeeTimeSuccessAction {
+interface UpdateOneTeeTimeSuccessAction {
   type: typeof constants.UPDATE_ONE_TEETIME_SUCCESS
   paylod: TeeTime
 }
 
-export interface UpdateOneTeeTimeFailedAction {
+interface UpdateOneTeeTimeFailedAction {
   type: typeof constants.UPDATE_ONE_TEETIME_FAILED
-  paylod: any
+  payload: any
 }
 
 //Remove tee time
-export interface RemoveTeeTimePendingAction {
+interface RemoveTeeTimePendingAction {
   type: typeof constants.REMOVE_TEETIME_PENDING
 }
 
-export interface RemoveTeeTimeSuccessAction {
+interface RemoveTeeTimeSuccessAction {
   type: typeof constants.REMOVE_TEETIME_SUCCESS
   payload: TeeTime
 }
 
-export interface RemoveTeeTimeFailedAction {
+interface RemoveTeeTimeFailedAction {
   type: typeof constants.REMOVE_TEETIME_FAILED
   payload: any
 }
 
 //Add tee time
-export interface AddNewTeeTimePendingAction {
+interface AddNewTeeTimePendingAction {
   type: typeof constants.ADD_NEW_TEETIME_PENDING
 }
 
-export interface AddNewTeeTimeSuccessAction {
-  type: typeof constants.ADD_NEW_TEETIME_PENDING
+interface AddNewTeeTimeSuccessAction {
+  type: typeof constants.ADD_NEW_TEETIME_SUCCESS
   payload: TeeTime
 }
 
-export interface AddNewTeeTimeFailedAction {
-  type: typeof constants.ADD_NEW_TEETIME_PENDING
+interface AddNewTeeTimeFailedAction {
+  type: typeof constants.ADD_NEW_TEETIME_FAILED
   payload: any
 }
 

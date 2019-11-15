@@ -1,14 +1,16 @@
 import * as constants from './constants'
 import * as types from './types'
 
-export const fetchAllCustomersPending = (): types.FetchAllCustomersPendingAction => ({ type: constants.FETCH_ALL_CUSTOMERS_PENDING })
-
-export const fetchAllCustomersSuccess = (customers: types.Customer[]): types.FetchAllCustomersSuccessAction => ({
-  type: constants.FETCH_ALL_CUSTOMERS_SUCCESS,
-  payload: customers
+export const FetchAllTeeTimesPending = (): types.TeeTimeActionType => ({
+  type: constants.FETCH_ALL_TEETIMES_PENDING
 })
 
-export const fetchAllCustomersFailed = (err: any): types.FetchAllCustomersFailedAction => ({
-  type: constants.FETCH_ALL_CUSTOMERS_FAILED,
+export const FetchAllTeeTimesSuccess = (teetimes: types.TeeTime[]): types.TeeTimeActionType => ({
+  type: constants.FETCH_ALL_TEETIMES_SUCCESS,
+  payload: teetimes
+})
+
+export const FetchAllTeeTimesFailed = (err: any): types.TeeTimeActionType => ({
+  type: constants.FETCH_ALL_TEETIMES_FAILED,
   payload: err
 })
