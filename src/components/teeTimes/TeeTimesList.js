@@ -9,9 +9,10 @@ const TeeTimesList = (props) => {
 
   const listOfTeeTimes = teeTimesArr.map(teeTime => {
     const timeToFormat = new Date(teeTime.time);
+    
     return (
       <div className="content">
-        <div className="header">Scheduled teetime for:</div>
+        <div className="header">Scheduled tee time for:</div>
         <div className="description">
           <TDate time={timeToFormat} />  at <TTime time={timeToFormat} />
         </div>

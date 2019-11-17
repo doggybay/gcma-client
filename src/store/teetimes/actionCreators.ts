@@ -5,17 +5,29 @@ import * as actions from './actions'
 
 import { home, local, outside } from '../location'
 
-export const fetchAllCustomers = () => {
+export const fetchAllTeeTimes = () => {
   return async (dispatch: Dispatch) => {
     try {
-      dispatch(actions.fetchAllCustomersPending())
+      dispatch(actions.fetchAllTeeTimesPending())
 
-      const res = await axios.get(`${outside}customers`)
+      const res = await axios.get(`${local}teetimes`)
       
-      dispatch(actions.fetchAllCustomersSuccess(res.data))
+      dispatch(actions.fetchAllTeeTimesSuccess(res.data))
       
     } catch (err) {
-      dispatch(actions.fetchAllCustomersFailed(err))
+      dispatch(actions.fetchAllTeeTimesFailed(err))
     }
   }
+}
+
+export const fetchOneTeeTime = () => {
+  return async (dispatch: Dispatch) => {
+    try {
+      dispatch(actions.fetchOneTeeTimePending())
+
+      const res = await axios.get(`${local}tee`)
+    } catch (err) {
+      dispatch(actions.fetchOneTeeTimeFailed(err))
+    }
+  } 
 }

@@ -49,7 +49,7 @@ interface UpdateOneTeeTimePendingAction {
 
 interface UpdateOneTeeTimeSuccessAction {
   type: typeof constants.UPDATE_ONE_TEETIME_SUCCESS
-  paylod: TeeTime
+  payload: TeeTime
 }
 
 interface UpdateOneTeeTimeFailedAction {

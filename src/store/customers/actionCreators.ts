@@ -10,7 +10,7 @@ export const fetchAllCustomers = () => {
     try {
       dispatch(actions.fetchAllCustomersPending())
 
-      const res = await axios.get(`${outside}customers`)
+      const res = await axios.get(`${local}customers`)
       
       dispatch(actions.fetchAllCustomersSuccess(res.data))
       
